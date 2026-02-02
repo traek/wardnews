@@ -15,7 +15,7 @@
     
     <style>
         :root {
-            --pico-primary: #2c3e50; /* Slate Blue from our earlier palette */
+            --pico-primary: #2c3e50; /* Slate Blue */
         }
 
         body {
@@ -30,9 +30,11 @@
 
         main.container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 100%;
+            padding-bottom: 2rem;
         }
 
         article {
@@ -42,6 +44,8 @@
             padding: 3rem;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            background-color: #ffffff;
+            margin-bottom: 2rem;
         }
 
         .construction-logo {
@@ -56,8 +60,19 @@
             color: var(--pico-primary);
         }
 
-        p {
+        .site-footer {
+            max-width: 600px;
+            text-align: center;
+            font-size: 0.75rem;
             color: #7f8c8d;
+            line-height: 1.6;
+            padding: 0 1rem;
+        }
+
+        .disclaimer {
+            margin-top: 1rem;
+            font-style: italic;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -70,7 +85,24 @@
         <h2>Under Construction</h2>
         <p>Digital tools for the modern Ward are on the way.</p>
     </article>
+
+    <footer class="site-footer">
+        <div>
+            &copy; <span id="current-year"></span> Ward News. All Rights Reserved.
+        </div>
+        <div style="margin-top: 4px;">
+            A project of <strong>Ungatech LLC</strong>
+        </div>
+        <div class="disclaimer">
+            This website is not owned, operated, endorsed by, or affiliated with The Church of Jesus Christ of Latter-day Saints. The content and services provided herein are the sole responsibility of Ward News and its volunteers.
+        </div>
+    </footer>
 </main>
+
+<script>
+    // Automatically sets the copyright year
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
